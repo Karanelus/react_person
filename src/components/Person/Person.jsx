@@ -4,23 +4,13 @@ import { PersonAge } from './PersonAge';
 import { PersonSpouse } from './PersonSpouse';
 
 export const Person = ({ person }) => {
+  const { name, age, sex, partnerName, isMarried } = person;
+
   return (
     <section className="Person">
-      <PersonName name={person.name} />
-      {person.age && <PersonAge age={person.age} />}
-      <PersonSpouse
-        sex={person.sex}
-        spouse={person.partnerName}
-        isMarried={person.isMarried}
-      />
+      <PersonName name={name} />
+      {person.age && <PersonAge age={age} />}
+      <PersonSpouse sex={sex} spouse={partnerName} isMarried={isMarried} />
     </section>
   );
 };
-
-// misha = {
-//   name: 'Misha',
-//   age: 37,
-//   sex: 'm',
-//   isMarried: true,
-//   partnerName: 'Natasha',
-// };
